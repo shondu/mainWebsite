@@ -30,7 +30,7 @@
         </div>
         <div>
           <a class="email-link"
-             :href="'mailto:dmj240@gmail.com?subject=' + this.subject + '&body=' + this.formatEmail()">
+             :href="'mailto:dmj240@gmail.com?subject=' + this.subject + '&body=' + this.formatEmail()" @click="eventuallyClearForm()">
             Send Email
           </a>
 <!--          <button type="button" class="form-button" @Click-="sendEmail">Send</button>-->
@@ -63,10 +63,12 @@
           sendEmail () {
           },
           formatEmail () {
-            // %0D%0A
-            // %20%3A%0D%0A
             return 'Name%3A%20' + this.firstName + '%20' + this.lastName + '%0D%0A' +
               'Company%3A%20' + this.company + '%0D%0A%0D%0A' + this.message
+          },
+          eventuallyClearForm () {
+            let that = this
+            setTimeout(() => that.clearForm(), 2500)
           }
       }
     }

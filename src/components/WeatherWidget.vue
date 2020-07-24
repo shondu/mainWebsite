@@ -5,6 +5,9 @@
           {{weatherTile.name}}
         </div>
         <div>
+          {{weatherTile.weather[0].main}}
+        </div>
+        <div>
           {{weatherTile.weather[0].description}}
         </div>
         <div>
@@ -13,7 +16,7 @@
         <div class="tooltiptext">
           Min: {{formatTemp(weatherTile.main.temp_min)}}&#176; F <br>
           Max: {{formatTemp(weatherTile.main.temp_max)}}&#176; F <br>
-          Feels like: {{formatTemp(weatherTile.main.temp)}}&#176; F <br>
+          Feels like: {{formatTemp(weatherTile.main.feels_like)}}&#176; F <br>
           Humidity: {{weatherTile.main.humidity}}&#37;
         </div>
         <img
@@ -28,7 +31,7 @@
         name: 'WeatherWidget',
       data () {
           return {
-            weatherApi: process.env.KEYS.WEATHER_API,
+            weatherApiKey: process.env.KEYS.WEATHER_API,
             cityList: ['Omaha', 'Portland', 'Seattle', 'Colorado%20Springs'],
             weatherList: []
           }
@@ -38,17 +41,16 @@
       },
       methods: {
         fetchWeatherData () {
-          for (let index in this.cityList) {
-            let apiString = 'http://api.openweathermap.org/data/2.5/weather?q=' +
-              this.cityList[index] +
-              '&appid=' +
-              this.weatherApi +
-              '&units=imperial'
+          this.cityList.forEach(city => {
+            let apiString =
+              'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + this.weatherApiKey + '&units=imperial'
 
             fetch(apiString)
               .then(response => response.json())
-              .then(data => this.weatherList.push(data))
-          }
+              .then(data => {
+                this.weatherList.push(data)
+              })
+          })
         },
         formatTemp (temp) {
           return Math.floor(temp)
