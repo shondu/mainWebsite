@@ -28,7 +28,7 @@
         name: 'WeatherWidget',
       data () {
           return {
-            weatherApi: 'ab18c585a18e0312e2718029a61ac407',
+            weatherApi: process.env.KEYS.WEATHER_API,
             cityList: ['Omaha', 'Portland', 'Seattle', 'Colorado%20Springs'],
             weatherList: []
           }
