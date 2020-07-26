@@ -63,10 +63,11 @@
   .city-tile{
     border-radius: 30px;
     padding: 5px;
+    margin: 10px;
   }
   .flex-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     background-color: transparent;
     justify-content: space-evenly;
     margin-bottom: 10px;
@@ -74,12 +75,11 @@
   .flex-container > div {
     color: black;
     font-weight: bolder;
-    /*background-color: #800000;*/
     background-color: lightblue;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     text-align: center;
-    /*box-shadow: 5px 10px 18px red;*/
+    font-size: 75%;
     box-shadow:  5px 10px 18px grey;
   }
   .tooltip {
@@ -101,10 +101,27 @@
     position: absolute;
     z-index: 1;
     top: -40px;
-    left: 40px;
+    left: 15px;
   }
 
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+  @media only screen and (min-width: 400px) {
+    .flex-container > div {
+      font-size: 100%;
+      height: 200px;
+    }
+  }
+  @media only screen and (min-width: 600px) {}
+  @media only screen and (min-width: 768px) {
+    .flex-container > div {
+      width: 200px;
+      height: 200px;
+    }
+    .tooltip .tooltiptext {
+      left: 40px;
+    }
+  }
+
 </style>

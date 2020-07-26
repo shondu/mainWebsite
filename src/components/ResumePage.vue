@@ -384,25 +384,27 @@
     font-size: 150%;
     font-weight: bold;
   }
-  /* Pattern styles */
   .container {
-    display: flex;
   }
   .content{
-    margin: 5px 0 5px 15px;
+    /*margin: 5px 0 5px 15px;*/
+    margin: 10px;
   }
   .left-half {
     background-color: white;
-    flex: 2;
   }
-
   .right-half {
     background-color: lightgray;
-    flex: 1;
   }
-  @media (max-width: 800px) {
+  @media only screen and (min-width: 600px) {
+    .container{
+      display: flex;
+    }
     .left-half{
-      flex: 1
+      width: 70%;
+    }
+    .right-half{
+      width: 30%;
     }
   }
 </style>

@@ -1,31 +1,26 @@
 <template>
     <div class="contact-page">
       <h1>Contact me</h1>
-      <p class="contact-header">Don Jensen</p>
-      <p class="contact-header">5735 South 113th Street</p>
-      <p class="contact-header">Omaha, Ne 68137</p>
-      <p class="contact-header">(402) 871-5244</p>
+      <p class="contact-header">Don Jensen<br>5735 South 113th Street<br>Omaha, Ne 68137<br>(402) 871-5244</p>
       <div class="contact-info">
         <div>
-          <label class="form-label" for="firstName">First Name:</label>
+          <label class="form-label" for="firstName">First Name</label>
           <input class="form-input" type="text" id="firstName" v-model="firstName">
         </div>
         <div>
-          <label class="form-label" for="lastName">Last Name:</label>
-          <input class="form-input" type="text" id="lastName" v-model="lastName">
+          <label class="form-label" for="lastName">Last Name</label>
+          <input class="form-input " type="text" id="lastName" v-model="lastName">
         </div>
         <div>
-          <label class="form-label" for="company">Company:</label>
-          <input class="form-input" type="text" id="company" v-model="company">
+          <label class="form-label" for="company">Company</label>
+          <input class="form-input form-spacer" type="text" id="company" v-model="company">
         </div>
-        <br>
         <div>
-          <label class="form-label" for="subject">Subject:</label>
-          <input class="form-input" type="text" id="subject" v-model="subject">
+          <label class="form-label" for="subject">Subject</label>
+          <input class="form-input form-spacer" type="text" id="subject" v-model="subject">
         </div>
-        <br>
         <div>
-          <label class="form-label" for="message">Message:</label>
+          <label class="form-label" for="message">Message</label>
           <textarea class="form-input"  id="message" cols="30" rows="10" v-model="message"></textarea>
         </div>
         <div>
@@ -33,7 +28,6 @@
              :href="'mailto:dmj240@gmail.com?subject=' + this.subject + '&body=' + this.formatEmail()" @click="eventuallyClearForm()">
             Send Email
           </a>
-<!--          <button type="button" class="form-button" @Click-="sendEmail">Send</button>-->
           <button type="button" class="form-button" @click="clearForm">Reset</button>
         </div>
       </div>
@@ -75,25 +69,9 @@
 </script>
 
 <style scoped>
-  .contact-page{
-    width: 40%;
-    margin: auto;
-  }
   .contact-info{
-    margin-top: 20px;
-    border: black 3px solid;
-    padding: 20px 0 50px 0;
-  }
-  .contact-header{
-    margin: 0;
-  }
-  .form-label{
-    float: left;
-    width: 20%
-
-  }
-  .form-input{
-    width: 70%;
+    margin: 10px;
+    padding: 10px;
   }
   .form-button{
     float: right;
@@ -118,17 +96,35 @@
     border: black 2px solid;
     margin: 15px 5px;
   }
-  @media (max-width: 800px) {
-    .contact-page{
-      width: 90%;
+  .form-label{
+    float: left;
+  }
+  .form-input{
+    float: left;
+    width: 100%;
+  }
+  .form-spacer{
+    margin-bottom: 25px;
+  }
+  @media only screen and (min-width: 600px) {
+    .contact-info{
+      background-color: lightgrey;
+      width: 300px;
+      height: 420px;
+      margin: auto;
+      padding: 50px 50px;
     }
     .form-label{
       float: left;
-      width: 30%;
-
     }
-    .form-input {
-      width: 50%;
+    .form-input{
+      float: left;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .contact-info{
+      width: 500px;
     }
   }
 </style>

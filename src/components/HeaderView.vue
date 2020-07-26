@@ -1,20 +1,20 @@
 <template>
   <div class="header-view">
-    <div class="float-left name-display">
+    <div class="name-display">
       <router-link class="name-indent" to="/">Don Jensen</router-link>
     </div>
-    <div class="float-right nav-display">
+    <div class="nav-display">
       <router-link class="nav-spacing" to="/">
         <i class="fa fa-home"></i>
-        Main
+        <span class="nav-item-name">Main</span>
       </router-link>
       <router-link class="nav-spacing" to="/resume">
         <i class="fa fa-sticky-note"></i>
-        Resume
+        <span class="nav-item-name">Resume</span>
       </router-link>
       <router-link class="nav-spacing" to="/contact">
         <i class="fa fa-envelope-open"></i>
-        Contact
+        <span class="nav-item-name">Contact</span>
       </router-link>
     </div>
   </div>
@@ -41,18 +41,14 @@
     margin-left: 10px;
   }
   .name-display{
-    padding-top: 4px;
+    float: left;
+    padding-top: 18px;
     text-align: left;
-    font-size: 150%;
+    font-size: 100%;
     width: 50%;
   }
-  .float-left{
-    float: left;
-  }
-  .float-right{
-    float: right;
-  }
   .nav-display{
+    float: right;
     padding-top: 18px;
     width: 50%;
     text-align: right;
@@ -63,5 +59,33 @@
   }
   .nav-spacing{
     padding-right: 20px;
+  }
+  .nav-item-name{
+    display: none;
+  }
+  @media only screen and (min-width: 600px){
+    .name-display{
+      padding-top: 15px;
+    }
+    .nav-display{
+      float: right;
+      padding-top: 18px;
+      width: 50%;
+      text-align: right;
+    }
+    .nav-item-name{
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 800px) {
+    .nav-display{
+      float: right;
+      padding-top: 18px;
+      width: 50%;
+      text-align: right;
+    }
+    .nav-item-name{
+      display: inline-block;
+    }
   }
 </style>
