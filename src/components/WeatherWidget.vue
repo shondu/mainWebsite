@@ -8,9 +8,6 @@
           {{weatherTile.weather[0].main}}
         </div>
         <div>
-          {{weatherTile.weather[0].description}}
-        </div>
-        <div>
           {{formatTemp(weatherTile.main.temp)}}&#176; F
         </div>
         <div class="tooltiptext">
@@ -75,19 +72,18 @@
   .flex-container > div {
     color: black;
     font-weight: bolder;
-    background-color: lightblue;
-    width: 150px;
+    /*background-color: lightblue;*/
+    background-color: #a5cb2f;
     height: 150px;
     text-align: center;
     font-size: 75%;
-    box-shadow:  5px 10px 18px grey;
+    box-shadow:  5px 10px 18px white;
   }
   .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
   }
-
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;

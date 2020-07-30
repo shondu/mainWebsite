@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showTime">
+  <div class="black-bckground" v-if="showTime">
     <span class="clock-format">{{fullDateString}}</span>
   </div>
 </template>
@@ -65,7 +65,10 @@
 </script>
 
 <style scoped>
+  .black-bckground{
+    background-color: black;
+  }
   .clock-format{
-
+    color: white;
   }
 </style>

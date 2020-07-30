@@ -44,6 +44,15 @@
 </script>
 
 <style scoped>
+  #main-page{
+    background-color: black;
+  }
+  a{
+    color: white;
+  }
+  li{
+    list-style: none;
+  }
   .main-image{
     margin: 0;
     padding: 0;
@@ -67,6 +76,9 @@
     .image-text{
       left: 55%;
     }
+    ul{
+      column-count: 2;
+    }
   }
   @media only screen and (min-width: 500px) {
     .image-text{
@@ -77,6 +89,9 @@
     .image-text{
       left: 70%;
       font-size: 25px;
+    }
+    ul{
+      column-count: 3;
     }
   }
   @media only screen and (min-width: 768px) {
@@ -90,6 +105,9 @@
       width: 30%;
       line-height: 50px;
       margin-top: 40px;
+    }
+    ul{
+      column-count: 4;
     }
   }
 </style>
